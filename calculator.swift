@@ -1,4 +1,5 @@
 
+
 // Menu function to display options to user
 func showMenu() {
     print("""
@@ -12,24 +13,54 @@ func showMenu() {
     """)
 }
 
+var xValue: Double?
+var yValue: Double?
 
 print("please enter your two numbers.")
-let number1 = readLine()
-let number2 = readLine()
+if let number1 = readLine(), let num1 = Double(number1) {
+    xValue = num1
+    print("number accepted")
+}
+else {
+    print("error")
+}
+if let number2 = readLine(), let num2 = Double(number2) {
+    yValue = num2
+    print("number accepted")
+}
+else {
+    print("error")
+}
 
+var calculate = true
 
-
-while true{
+if let x = xValue, let y = yValue {
+    while calculate == true {
 showMenu()
 let menuSelection = readLine()
 if menuSelection == "1" {
-    
+    func add() {
+    let sum = x + y
+    print(x, "+", y, "=", sum)
+    }
+    add()
+    calculate = false
 }
 if menuSelection == "2" {
-    
+    func subtract() { 
+    let difference = x - y
+    print( x, "-", y, "=", difference)
+    }
+    subtract()
+    calculate = false
 }
 if menuSelection == "3" {
-    
+    func multiply() {
+    let product = x * y
+    print( x, "*", y, "=", product)
+    }
+    multiply()
+    calculate = false
 }
 if menuSelection == "4" {
    
@@ -41,7 +72,22 @@ if menuSelection == "6" {
 
 }
 else {
+    if calculate == true {
     print("Not a valid operation. Please select an operation using numbers 1-6.")
 }
+else {
 }
+}
+}
+}
+else {
+    print("error")
+}
+
+
+
+
+
+
+
 
