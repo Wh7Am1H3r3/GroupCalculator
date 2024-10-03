@@ -1,4 +1,4 @@
-
+import Foundation
 
 // Menu function to display options to user
 func showMenu() {
@@ -63,13 +63,17 @@ if menuSelection == "3" {
     calculate = false
 }
 if menuSelection == "4" {
-   
+print("The result is \(x / y).")   
+calculate = false
 }
 if menuSelection == "5" {
-    
+let result = Int(pow(x, y))
+print("The result is \(result).")    
+calculate = false
 }
 if menuSelection == "6" {
-
+print("The result is \(Int(x) % Int(y)).")
+calculate = false
 }
 else {
     if calculate == true {
